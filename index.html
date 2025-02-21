@@ -28,17 +28,14 @@
             
             function redirecionar() {
                 window.location.href = destino;
-                setTimeout(() => {
-                    if (appLink) window.location.href = appLink;
-                }, 3000);
             }
+            
+            redirecionar(); // Redireciona imediatamente ao carregar a página
             
             document.getElementById("irAoCardapio").addEventListener("click", redirecionar);
             document.getElementById("baixarApp").addEventListener("click", () => {
                 if (appLink) window.location.href = appLink;
             });
-            
-            setTimeout(redirecionar, 10000);
         });
     </script>
 </head>
@@ -53,7 +50,6 @@
             <div class="col-md-6 offset-md-3 text-center">
                 <div class="spinner-border text-danger" style="width: 5rem; height: 5rem; margin: 50px 0;" role="status"></div>
                 <p>Olá, estamos conectando você com o nosso cardápio!</p>
-                <p>Você será redirecionado em <span id="contador">10</span> segundos.</p>
                 <button id="irAoCardapio" class="btn btn-secondary">Ir ao cardápio</button>
                 <button id="baixarApp" class="btn btn-danger mt-2">Baixar o aplicativo</button>
             </div>
